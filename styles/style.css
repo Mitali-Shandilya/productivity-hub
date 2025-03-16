@@ -1,0 +1,83 @@
+.top{
+    font-size: 2rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cover{
+    display: block;
+    width: 100%;
+    height: 500px;
+}
+.heading{
+    font-size: 50px;
+    padding-left: 180px;
+    padding-right: 220px;
+}
+#quote{
+    background-color: rgba(218, 200, 200, 0.616);
+    font-size: 45px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#currently_working{
+    font-weight: bold;
+}
+.comment{
+    font-style: italic;
+    font-size: 2.7rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.content{
+   padding-left: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.parts{
+    padding-right: 220px;
+    flex: 1;
+    flex: 1;
+    min-width: 300px;
+}
+#todo{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    font-size: 2.5rem;
+}
+.icon-img{
+    padding-right: 20px;
+    width: 30px;
+    height: 30px;
+}
+#hello_kity{
+    width: 100%;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+}
+
+#todo a:visited{
+    color:rgba(53, 49, 49, 0.479);
+}
+#todo a:hover{
+    background-color: rgba(224, 216, 216, 0.808);
+}
+#todo input[type="checkbox"] {
+    transform: scale(2.5); 
+    margin-right: 10px; 
+}
+.page{
+    padding-right: 20px;
+    width: 50px;
+    height: 50px;
+}
+/*#todo a:active {
+  background-color: rgba(102, 141, 214, 0.815);
+}*/
+/* General Styling */
