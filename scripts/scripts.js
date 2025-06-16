@@ -1,85 +1,91 @@
-document.addEventListener("DOMContentLoaded", loadTasks);
+const InputBox=document.getElementById("inputBox");
+const listContainer=document.getElementById("list_container");
+const looking=document.getElementById("lookingBox");
+const lookingItem=document.getElementById("looking_container");
 
-const taskForm = document.getElementById("task-form");
-const taskTableBody = document.getElementById("task-table-body");
+//for adding a new task in daily to-do
+function addDailyTask(){
+    if(InputBox.value===''){
+        alert("you must write something.");
+    }
+    else{
+        let li=document.createElement("li");
+        li.innerHTML=InputBox.value;
+        listContainer.appendChild(li);
+        let span=document.createElement("span")
+        span.innerHTML="\u00d7";
+        li.appendChild(span);
+    }
+    InputBox.value="";
+    saveDailyData();
+}
 
-// Add Task
-taskForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const task = {
-        name: document.getElementById("task-name").value,
-        status: document.getElementById("status").value,
-        headedIn: document.getElementById("headed-in").value,
-        details: document.getElementById("task-details").value,
-        date: document.getElementById("date").value,
-        time: document.getElementById("time").value,
-        notes: document.getElementById("notes").value
-    };
-
-    addTaskToTable(task);
-    saveTask(task);
-    taskForm.reset();
+//for adding looking ahead item
+function addLookingAhead(){
+    if(looking.value===''){
+        alert("you must write something in looking ahead");
+        return ;
+    }
+    let li=document.createElement("LI");
+    li.innerHTML=looking.value;
+    lookingItem.appendChild(li);
+    let span=document.createElement("SPAN");
+    span.innerHTML="\u00d7";
+    li.appendChild(span);
+    looking.value="";
+    saveLookingData();
+}
+//add task on enter key
+InputBox.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        addDailyTask();
+    }
 });
 
-// Add Task to Table
-function addTaskToTable(task) {
-    const row = document.createElement("tr");
+looking.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        addLookingAhead();
+    }
+});
+//for checking/unchecking and deleting [update event listeners]
+listContainer.addEventListener("click", function(e){
+    if(e.target.tagName==="LI"){
+        e.target.classList.toggle("checked");
+        saveDailyData();
+    }
+    else if(e.target.tagName==="SPAN"){
+        e.target.parentElement.remove();
+        saveDailyData();
+    }
+},false);
 
-    row.innerHTML = `
-        <td>${task.name}</td>
-        <td>${task.status}</td>
-        <td>${task.headedIn}</td>
-        <td>${task.details}</td>
-        <td>${task.date}</td>
-        <td>${task.time}</td>
-        <td>${task.notes}</td>
-        <td>
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-        </td>
-    `;
+lookingItem.addEventListener("click", function(e) {
+    if(e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveLookingData();
+    }
+    else if(e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        saveLookingData();
+    }
+}, false);
 
-    row.querySelector(".delete-btn").addEventListener("click", function() {
-        row.remove();
-        deleteTask(task.name);
-    });
-
-    row.querySelector(".edit-btn").addEventListener("click", function() {
-        editTask(row, task);
-    });
-
-    taskTableBody.appendChild(row);
+//for saving daily to do
+function saveDailyData(){
+    localStorage.setItem("dailyData", listContainer.innerHTML);
+}
+//for saving looking ahead
+function saveLookingData(){
+    localStorage.setItem("lookingData", lookingItem.innerHTML);
 }
 
-// Save Task in Local Storage
-function saveTask(task) {
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.push(task);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+//for displaying everytime website is reloaded
+function showTask(){
+   const dailyData = localStorage.getItem("dailyData");
+   const lookingData = localStorage.getItem("lookingData");
+    
+    if (dailyData) listContainer.innerHTML = dailyData;
+    if (lookingData) lookingItem.innerHTML = lookingData;
 }
+showTask()
 
-// Load Tasks from Local Storage
-function loadTasks() {
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks.forEach(addTaskToTable);
-}
-
-// Delete Task from Local Storage
-function deleteTask(taskName) {
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks = tasks.filter(task => task.name !== taskName);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-// Edit Task
-function editTask(row, task) {
-    document.getElementById("task-name").value = task.name;
-    document.getElementById("status").value = task.status;
-    document.getElementById("headed-in").value = task.headedIn;
-    document.getElementById("task-details").value = task.details;
-    document.getElementById("date").value = task.date;
-    document.getElementById("time").value = task.time;
-    document.getElementById("notes").value = task.notes;
-    row.remove();
-    deleteTask(task.name);
-}

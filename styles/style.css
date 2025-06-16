@@ -1,83 +1,269 @@
-.top{
-    font-size: 2rem;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/*==========responsive design ==========*/
+@media (max-width: 768px) {
+    .dash {
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .parts {
+        min-width: 100%;
+    }
+    
+    .part_img {
+        width: 100%;
+        height: auto;
+        max-height: 18rem;
+    }
 }
-.cover{
+/*==========HEADER==========*/
+.nav_logo{
+    height: 0.9rem;
+    width: 0.9rem;
+}
+.nav_title{
+    font-size: 0.8rem;
+    padding-left: 0.1rem;
+    
+}
+.header_cover{
     display: block;
     width: 100%;
-    height: 500px;
 }
-.heading{
-    font-size: 50px;
-    padding-left: 180px;
-    padding-right: 220px;
+
+/*===========dashboard heading section===========*/
+.home_top{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
 }
-#quote{
+.home_title{
+    font-size: 1.7rem;
+}
+.home_quote{
     background-color: rgba(218, 200, 200, 0.616);
-    font-size: 45px;
-    padding: 10px;
+    font-size: 1.2rem;
     border-radius: 5px;
 }
-#currently_working{
-    font-weight: bold;
-}
-.comment{
+.home_comment{
     font-style: italic;
-    font-size: 2.7rem;
+    font-size: 1.05rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.content{
-   padding-left: 180px;
+.home_comment_desc{
+    font-weight: bold;
+}
+
+/*==========main dashboard==========*/
+.dash{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 .parts{
-    padding-right: 220px;
-    flex: 1;
     flex: 1;
     min-width: 300px;
 }
-#todo{
+.part_title{
+    font-size: 1.35rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(218, 200, 200, 0.616);
+}
+.part_img{
+    width: 20rem;
+    height: 18rem;
+}
+.list{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding-left: 20px;
-    font-size: 2.5rem;
-}
-.icon-img{
-    padding-right: 20px;
-    width: 30px;
-    height: 30px;
-}
-#hello_kity{
-    width: 100%;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 2rem;
-    margin-top: 20px;
-    background-color: #f0f0f0;
+    font-size: 1.15rem;
+    color:rgb(62, 61, 61);
 }
 
-#todo a:visited{
-    color:rgba(53, 49, 49, 0.479);
+/* ========== daily todo ========== */
+
+.todo_comment {
+    font-style: italic;
+    font-size: 1.05rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #555;
+    margin-bottom: 20px;
 }
-#todo a:hover{
+
+.addTask {
+    display: flex;
+    background: #edeef0;
+    border-radius: 30px;
+    padding: 5px 10px;
+
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: #68c0c0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: #34849a;
+}
+
+.todo-list ul {
+    padding: 0;
+}
+
+.todo-list ul li {
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    margin: 8px 0;
+}
+
+.todo-list ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('../objects/icons/radio.png');
+    background-size: contain;
+}
+
+.todo-list ul li.checked {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.todo-list ul li.checked::before {
+    background-image: url('../objects/icons/checked.png');
+}
+
+.todo-list ul li span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #555;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.todo-list ul li:hover {
+    background-color: #f5f5f5;
+}
+.todo-list ul li:hover span {
+    opacity: 1;
+}
+
+.todo-list ul li span:hover {
+    background: #edeef0;
+    color: #333;
+}
+/*==========school dashboard==========*/
+.scl_item{
+    padding-bottom: 5px;
+    padding-left: 4px;
+    color:rgb(62, 61, 61);
+}
+.scl_icon-img{
+    width: 1rem;
+    height: 1rem;
+    padding-bottom: 5px;
+}
+.scl_item:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/*===========Looking Ahead ==========*/
+.Lookinglist ol {
+    padding: 0;
+    counter-reset: item; 
+    list-style-type: none; 
+}
+.Lookinglist ol li {
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    margin: 5px 0;
+    counter-increment: item;
+}
+.Lookinglist ol li::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: contain;
+    content: counter(item) "# "; /* Show the counter */
+    color: #555;
+    font-weight: bold;
+}
+
+.Lookinglist ol li span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.Lookinglist ol li:hover {
+    background-color: #f5f5f5;
+}
+.Lookinglist ol li:hover span {
+    opacity: 1;
+}
+
+.Lookinglist ol li span:hover {
+    background: #edeef0;
+    color: #333;
+}
+/*===========active items=========*/
+.list a:hover{
     background-color: rgba(224, 216, 216, 0.808);
 }
-#todo input[type="checkbox"] {
-    transform: scale(2.5); 
-    margin-right: 10px; 
+.list input[type="checkbox"]:checked + .todo_item {
+    transform: scale(1.5); 
+    text-decoration: line-through;
+    opacity: 0.7;
+} 
+
+/*==========footer==========*/
+.footer {
+   background-color: #f0f0f0;
 }
-.page{
-    padding-right: 20px;
-    width: 50px;
-    height: 50px;
+.footer__copyright{
+    text-align: center;
+    font-size: 1.2rem;
 }
-/*#todo a:active {
-  background-color: rgba(102, 141, 214, 0.815);
-}*/
-/* General Styling */
