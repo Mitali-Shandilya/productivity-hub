@@ -25,14 +25,63 @@
     <main class="main">
         <!--========== main heading ==========-->
         <section class="home_top">
-            <h1><img src="objects/icons/key.svg" class="scl_icon-img"><span class="home_title">To-do List</span></h1>
+            <h1><img src="objects/icons/key.svg" class="scl_icon-img"><span class="home_title">Master To-do List</span></h1>
         </section>
+        <section class="masterDash">
+            <table class="taskTable">
+                <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Course Code</th>
+                    <th>Done?</th>
+                    <th>Task Type</th>
+                    <th>Deadline</th>
+                    <th>Notes</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
 
+                <tbody id="taskTableBody">
+                    <!--<tr>
+                        <td>SE</td>
+                        <td><label for="status"></label><select name="status" id="status">
+                            <option value="notStarted">Not Started</option>
+                            <option value="inProgress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select></td>
+                        <td>BCS601</td>
+                        <td></td>
+                        <td>Final</td>
+                        <td>30/05/2025</td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>SE</td>
+                        <td><label for="status"></label><select name="status" id="status">
+                            <option value="notStarted">Not Started</option>
+                            <option value="inProgress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select></td>
+                        <td>BCS601</td>
+                        <td></td>
+                        <td>Final</td>
+                        <td>30/05/2025</td>
+                        <td></td>
+                    </tr>-->
+                </tbody>
+            </table>
+
+            <button class="add-row-btn" id="addRowBtn"><img src="objects/icons/plus.png" alt="Add"></button>
+        </section>
     </main>
 
     <!--========== footer ==========-->
     <footer class="footer">
         <p class="footer__copyright">&copy; 2025. All rights reserved.</p>
     </footer>
+
+    <script src="scripts/master.js"></script>
 </body>
 </html>
