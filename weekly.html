@@ -20,7 +20,150 @@
         </div>        
     </header>
 
-    <main>
+    <main class="main">
+        <section class="home_top">
+            <h1><img src="objects/icons/list-check.svg" alt="" class="scl_icon-img"><span class="home_title">Weekly Schedule</span></h1>
+        </section>
+
+        <section class="weekContainer">
+            <section class="weeklyDash">
+
+                <!--==============Sunday==========-->
+                <section class="days">
+                    <div class="dayTitle">
+                        <h3>Sunday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="sunday-list">
+                            <!--<li class="checked">1</li>
+                            <li>2</li>
+                            <li>3</li>-->
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="sundayBox" placeholder="Add task">
+                        <button onclick="addSundayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!---=============Monday==========-->
+                <section class="days">
+                    <div class="dayTitle">
+                        <h3>Monday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="monday-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="mondayBox" placeholder="Add task">
+                        <button onclick="addMondayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!--==========Tues==========-->
+                <section class="days">
+                    <div class="dayTitle">
+                        <h3>Tuesday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="tuesday-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="tuesdayBox" placeholder="Add task">
+                        <button onclick="addTuesdayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!--==========wednesday===========-->
+                <section class="days">
+                    <div class="dayTitle">
+                        <h3>Wednesday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="wednesday-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="wednesdayBox" placeholder="Add task">
+                        <button onclick="addWednesdayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!--==========thursday==========--><section class="days">
+                    <div class="dayTitle">
+                        <h3>Thursday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="thursday-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="thursdayBox" placeholder="Add task">
+                        <button onclick="addThursdayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!--=============friday============-->
+                <section class="days">
+                    <div class="dayTitle">
+                        <h3>Friday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="friday-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="fridayBox" placeholder="Add task">
+                        <button onclick="addFridayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!--============saturday==========-->
+                <section class="days">
+                    <div class="dayTitle">
+                        <h3>Saturday</h3>
+                    </div>
+
+                    <div class="weekTodo">
+                        <ul id="saturday-list">
+                            
+                        </ul>
+                    </div>
+                    <div class="addTask">
+                        <input type="text" name="" id="saturdayBox" placeholder="Add task">
+                        <button onclick="addSaturdayTask()"><img src="objects/icons/plus.png" alt=""></button>
+                    </div>
+
+                    <div class="divider"></div>
+                </section>
+
+            </section>
+        </section>
         
     </main>
 
@@ -28,5 +171,7 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2025. All rights reserved.</p>
     </footer>
+
+    <script src="scripts/week.js"></script>
 </body>
 </html>
