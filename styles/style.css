@@ -270,12 +270,12 @@ button:hover {
 }
 
 /*==========MASTER TO DO FILE==========*/
-.masterDash table{
+.masterDash table, .habitContainer table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-.masterDash th, .masterDash td{
+.masterDash th,  .habitContainer th, .habitContainer td ,.masterDash td{
     border-left: 1px solid #ebdada;
     border-right: 1px solid #ebdada;
     border-top: none;
@@ -283,7 +283,7 @@ button:hover {
     padding: 12px;
     text-align: left;
 }
-.masterDash th{
+.masterDash th ,  .habitContainer th{
     background-color: #f2f2f2;
     position: sticky;
     top: 0;
@@ -437,3 +437,4 @@ button:hover {
   border-top: 1px solid #ccc;  /* Adjust color and thickness */
   margin: 20px 0;  /* Add space above and below */
 }
+

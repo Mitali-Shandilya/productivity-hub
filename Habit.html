@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study HQ</title>
+    <link rel="icon" href="objects/icons/diary-clasp.svg">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style2.css">
+</head>
+<body>
+    
+    <header class="header" id="header">
+        <nav class="nav container">
+                <img src="objects/icons/home_star.png" class="nav_logo">
+                <a href="index.html" target="_self" class="nav_title"><span>Mitali's Productivity Hub!</span></a> / <a href="Habit.html"><img src="objects/icons/diary-clasp.svg" class="nav_logo">Habit Tracking</a>
+        </nav> 
+
+        <div class="header container">
+                <img src="objects/images/study_cover1.jpg" alt="" class="header_cover">
+        </div>
+    </header>
+
+    <main>
+        <section class="home_top">
+            <div class="heading">
+                 <h1><img src="objects/icons/diary-clasp.svg" alt="" class="scl_icon-img"><span class="home_title">Habit Tracking</span></h1>
+            </div>
+        </section>
+
+        <section class="habitContainer">
+            <table class="habitTable">
+                <thead>
+                    <tr>
+                        <th><img src="" alt=""></th>
+                        <th>Task</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+
+                <tbody id="habitTableBody">
+                    <!--<tr>
+                        <td><input type="text" class="taskName"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><input type="checkbox" class="day-checkbox"></td>
+                        <td><div class="progress-bar"><div class="progress-fill"></div></div></td>
+                    </tr>-->
+
+                </tbody>
+            </table>
+
+            <button class="add-row-btn" id="addRowBtn"><img src="objects/icons/plus.png" alt="Add"></button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2025. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/habit.js"></script>
+</body>
+</html>
